@@ -1,7 +1,7 @@
 {
-  "name": "podlibre/user-agents-php",
+  "name": "opawg/user-agents-php",
   "description": "PHP implementation for opawg/user-agents.",
-  "homepage": "https://github.com/podlibre/user-agents-php",
+  "homepage": "https://github.com/opawg/user-agents-php",
   "license": "MIT",
   "authors": [
     {
@@ -12,7 +12,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Podlibre\\UserAgentsPhp\\": "src/"
+      "Opawg\\UserAgentsPhp\\": "src/"
     }
   },
   "scripts": {
