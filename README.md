@@ -47,7 +47,7 @@ $ composer run-script post-install-cmd
 ```
 
 ## Usage
-When you need it, just call `\Opawg\UserAgentsPhp\UserAgents::find()`:
+When you need it, just call `\Opawg\UserAgentsPhp\UserAgents::find()` for audio files or `\Opawg\UserAgentsPhp\UserAgentsRSS::find()` for RSS feed:
 
 ```
 $player = \Opawg\UserAgentsPhp\UserAgents::find($_SERVER['HTTP_USER_AGENT']);
