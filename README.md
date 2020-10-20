@@ -14,8 +14,14 @@ This is a dummy PHP implementation for [opawg / user-agents](https://github.com/
     "opawg/user-agents-php": "*"
   },
   "scripts": {
-    "post-install-cmd": "@php vendor/opawg/user-agents-php/src/UserAgentsGenerate.php >  vendor/opawg/user-agents-php/src/UserAgents.php",
-    "post-update-cmd": "@php vendor/opawg/user-agents-php/src/UserAgentsGenerate.php >  vendor/opawg/user-agents-php/src/UserAgents.php"
+    "post-install-cmd": [
+      "@php vendor/opawg/user-agents-php/src/UserAgentsGenerate.php >  vendor/opawg/user-agents-php/src/UserAgents.php",
+      "@php vendor/opawg/user-agents-php/src/UserAgentsRSSGenerate.php >  vendor/opawg/user-agents-php/src/UserAgentsRSS.php"
+    ],
+    "post-update-cmd": [
+      "@php vendor/opawg/user-agents-php/src/UserAgentsGenerate.php >  vendor/opawg/user-agents-php/src/UserAgents.php",
+      "@php vendor/opawg/user-agents-php/src/UserAgentsRSSGenerate.php >  vendor/opawg/user-agents-php/src/UserAgentsRSS.php"
+    ]
   }
 }
 ```
@@ -27,10 +33,11 @@ This is a dummy PHP implementation for [opawg / user-agents](https://github.com/
 $ git clone https://github.com/opawg/user-agents-php.git
 ```
 
-- Generate the class:
+- Generate the classes:
 
 ```
 $ php src/UserAgentsGenerate.php >  src/UserAgents.php
+$ php src/UserAgentsRSSGenerate.php >  src/UserAgentsRSS.php
 ```
 
 Or with composer:
@@ -43,12 +50,21 @@ $ composer run-script post-install-cmd
 When you need it, just call `\Opawg\UserAgentsPhp\UserAgents::find()`:
 
 ```
-$player = \Podlibre\UserAgentsPhp\UserAgents::find($_SERVER['HTTP_USER_AGENT']);
+$player = \Opawg\UserAgentsPhp\UserAgents::find($_SERVER['HTTP_USER_AGENT']);
 if($player){
 	print player['app']."\n";
 	print player['device']."\n";
 	print player['os']."\n";
 	print player['bot']."\n";
+} else {
+	print "This user-agent was not found.\n";
+}
+
+$service = \Opawg\UserAgentsPhp\UserAgentsRSS::find($_SERVER['HTTP_USER_AGENT']);
+if($player){
+	print service['name']."\n";
+	print service['slug']."\n";
+	print service['url']."\n";
 } else {
 	print "This user-agent was not found.\n";
 }
