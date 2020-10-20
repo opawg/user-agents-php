@@ -16,6 +16,13 @@
     }
   },
   "scripts": {
-    "post-install-cmd": ["@php src/UserAgentsGenerate.php >  src/UserAgents.php", "@php src/UserAgentsRSSGenerate.php >  src/UserAgentsRSS.php"],
-    "post-update-cmd":  ["@php src/UserAgentsGenerate.php >  src/UserAgents.php", "@php src/UserAgentsRSSGenerate.php >  src/UserAgentsRSS.php"]
+    "post-install-cmd": [
+      "@php src/UserAgentsGenerate.php >  src/UserAgents.php",
+      "@php src/UserAgentsRSSGenerate.php >  src/UserAgentsRSS.php"
+    ],
+    "post-update-cmd": [
+      "@php src/UserAgentsGenerate.php >  src/UserAgents.php",
+      "@php src/UserAgentsRSSGenerate.php >  src/UserAgentsRSS.php"
+    ]
+  }
 }
