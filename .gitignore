@@ -1,4 +1,5 @@
 src/UserAgents.php
+src/UserAgentsRSS.php
 composer.phar
 /vendor/
 

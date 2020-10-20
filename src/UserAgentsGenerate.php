@@ -31,11 +31,9 @@ class UserAgents {
                 //Does the HTTP_USER_AGENT match this regexp:
                 if (preg_match("#{\$userAgentsRegexp}#", \$userAgent)) {
                     \$playerFound = [
-                        'app' => isset(\$player['app']) ? \$player['app'] : null,
-                        'device' => isset(\$player['device'])
-                            ? \$player['device']
-                            : null,
-                        'os' => isset(\$player['os']) ? \$player['os'] : null,
+                        'app' => isset(\$player['app']) ? \$player['app'] : '',
+                        'device' => isset(\$player['device']) ? \$player['device'] : '',
+                        'os' => isset(\$player['os']) ? \$player['os'] : '',
                         'bot' => isset(\$player['bot']) ? \$player['bot'] : 0,
                     ];
                     //We found it!
