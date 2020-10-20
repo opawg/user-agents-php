@@ -28,7 +28,7 @@ class UserAgentsRSS {
         //Search for current HTTP_USER_AGENT:
         foreach (self::\$db as \$service) {
             //Does the HTTP_USER_AGENT match this regexp:
-            if (preg_match("#{\$service['pattern']}#", \$userAgent)) {
+            if (strpos(\$userAgent, \$service['pattern']) !== false) {
                 \$serviceFound = [
                     'name' => isset(\$service['name']) ? \$service['name'] : '',
                     'slug' => isset(\$service['slug']) ? \$service['slug'] : '',
