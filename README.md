@@ -1,5 +1,5 @@
 # user-agents-php
-This is a dummy PHP implementation for [opawg / user-agents](https://github.com/opawg/user-agents)
+This is a dummy PHP implementation for both [opawg/user-agents](https://github.com/opawg/user-agents) and [opawg/podcast-rss-useragents](https://github.com/opawg/podcast-rss-useragents)
 
 ## Installation
 
