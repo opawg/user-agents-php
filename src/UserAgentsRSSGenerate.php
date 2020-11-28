@@ -24,7 +24,6 @@ class UserAgentsRSS {
     public static function find(\$userAgent)
     {
         \$serviceFound = null;
-    
         //Search for current HTTP_USER_AGENT:
         foreach (self::\$db as \$service) {
             //Does the HTTP_USER_AGENT match this regexp:
@@ -39,6 +38,20 @@ class UserAgentsRSS {
             }
         }
         return \$serviceFound;
+    }
+
+    public static function getName(\$slug)
+    {
+        \$name = null;
+        //Search for current HTTP_USER_AGENT:
+        foreach (self::\$db as \$service) {
+            if (\$slug === \$service['slug']) {
+                \$name = \$service['name'];
+                //We found it!
+                break 1;
+            }
+        }
+        return \$name;
     }
 
 
